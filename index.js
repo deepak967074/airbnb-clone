@@ -32,10 +32,11 @@ main()
     .then(() => {
         console.log("connected to DB");
 
-        app.listen(8080, () => {
-            console.log("port is listening on 8080");
-        });
+        const port = process.env.PORT || 8080;
 
+        app.listen(port, () => {
+            console.log(`port is listening on ${port}`);
+        });
     })
     .catch((err) => {
         console.log(err);
@@ -103,6 +104,10 @@ app.use((req, res, next) => {
 
 //     res.send(registeredUser);
 // });
+
+app.get("/", (req, res) => {
+    res.redirect("/listings");
+});
 
 // Router
 app.use("/listings", listingRouter);
