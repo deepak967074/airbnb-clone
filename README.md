@@ -27,3 +27,7 @@ A full-stack Airbnb clone web application built using Node.js, Express.js, Mongo
 npm install
 npm start
 ```
+
+## Project Screenshot
+
+![Home Page](screenshots/image.png)
